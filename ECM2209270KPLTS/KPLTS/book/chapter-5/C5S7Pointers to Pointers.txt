@@ -1,0 +1,52 @@
+Copyright reserved by ECM2209270.
+Knowledge Unit: Pointers to Pointers in C
+Title: Introduction to Pointers to Pointers
+
+Introduction:
+Pointers to pointers, often denoted as double pointers, are a concept in C that allows for indirect access to memory addresses. They are useful when dealing with dynamic memory allocation and modifying pointers through functions.
+
+Key Concepts:
+
+1.Declaration of Pointers to Pointers:
+
+A pointer to a pointer is declared using a double asterisk (**). It can be used to store the address of another pointer:
+int value = 10;
+int *ptr1 = &value;
+int **ptr2 = &ptr1;
+
+2.Indirect Access Through Pointers to Pointers:
+
+Indirect access involves using the double pointer to access the value pointed to by another pointer:
+printf("Value through double pointer: %d\n", **ptr2);
+
+3.Common Usage with Dynamic Memory Allocation:
+
+Pointers to pointers are often used in scenarios where dynamic memory allocation is involved, allowing for the creation of two-dimensional arrays or arrays of strings:
+char *words[] = {"Apple", "Banana", "Cherry"};
+char **ptrToWords = words;
+
+Example:
+#include <stdio.h>
+
+int main() {
+    // Pointer to pointer example
+    int value = 10;
+    int *ptr1 = &value;
+    int **ptr2 = &ptr1;
+
+    // Access and print value through double pointer
+    printf("Value through double pointer: %d\n", **ptr2);
+
+    // Pointer to array of strings example
+    char *fruits[] = {"Apple", "Banana", "Cherry"};
+    char **ptrToFruits = fruits;
+
+    // Access and print string through double pointer
+    printf("Fruit at index 1: %s\n", ptrToFruits[1]);
+
+    return 0;
+}
+Conclusion:
+Pointers to pointers provide a level of indirection in C programming, enabling more advanced memory manipulation techniques. They are particularly useful in scenarios involving dynamic memory allocation.
+
+Copyright reserved by ECM2209270.

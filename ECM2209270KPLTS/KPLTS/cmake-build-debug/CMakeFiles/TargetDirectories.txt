@@ -1,0 +1,3 @@
+C:/Users/Mao/Desktop/ECM2209270KPLTS/KPLTS/cmake-build-debug/CMakeFiles/e_book_system.dir
+C:/Users/Mao/Desktop/ECM2209270KPLTS/KPLTS/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Mao/Desktop/ECM2209270KPLTS/KPLTS/cmake-build-debug/CMakeFiles/rebuild_cache.dir

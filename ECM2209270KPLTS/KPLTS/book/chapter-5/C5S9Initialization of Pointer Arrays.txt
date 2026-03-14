@@ -1,0 +1,53 @@
+Copyright reserved by ECM2209270.
+
+Knowledge Unit: Initialization of Pointer Arrays
+Title: Basics of Initializing Pointer Arrays
+
+Introduction:
+Initializing pointer arrays in C involves storing memory addresses in an array of pointers. This concept is commonly used for managing arrays of strings or dynamic memory allocation.
+
+Key Concepts:
+
+1.Declaration and Initialization:
+
+A pointer array is declared by specifying the data type followed by an asterisk (*). Initialization involves assigning memory addresses to each pointer:
+char *colors[] = {"Red", "Green", "Blue"};
+
+2.Accessing Strings Through Pointer Arrays:
+
+Strings stored in a pointer array can be accessed using array notation or pointer arithmetic:
+printf("Color at index 2: %s\n", colors[2]);
+
+3.Dynamic Memory Allocation with Pointer Arrays:
+
+Pointer arrays are often used in scenarios where dynamic memory allocation is required, allowing for the creation of arrays with a flexible size:
+int *dynamicArray[5];
+for (int i = 0; i < 5; i++) {
+    dynamicArray[i] = (int *)malloc(sizeof(int));
+}
+
+Example:
+#include <stdio.h>
+
+int main() {
+    // Initialization of a pointer array with strings
+    char *fruits[] = {"Apple", "Banana", "Cherry"};
+
+    // Access and print strings through the pointer array
+    printf("Fruit at index 1: %s\n", fruits[1]);
+
+    // Dynamic memory allocation with a pointer array
+    int *dynamicArray[3];
+    for (int i = 0; i < 3; i++) {
+        dynamicArray[i] = (int *)malloc(sizeof(int));
+    }
+
+    // Freeing dynamically allocated memory
+    for (int i = 0; i < 3; i++) {
+        free(dynamicArray[i]);
+    }
+
+    return 0;
+}
+
+Copyright reserved by ECM2209270.

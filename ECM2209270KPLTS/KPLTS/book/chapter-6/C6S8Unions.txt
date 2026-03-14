@@ -1,0 +1,59 @@
+Copyright reserved by ECM2209270.
+
+Knowledge Unit: Unions in C
+Title: Basics of Unions
+
+Introduction:
+A union in C is a data structure that allows different data types to be stored in the same memory location. Unlike structures, unions use the same memory space for all their members, making them useful when memory efficiency is a concern.
+
+Key Concepts:
+
+1.Union Declaration:
+
+The syntax for declaring a union is similar to that of a structure:
+union MyUnion {
+    int intValue;
+    float floatValue;
+    char charValue;
+};
+
+2.Memory Storage:
+
+All members of a union share the same memory space. The size of the union is determined by the largest member:
+union MyUnion data;
+printf("Size of the union: %lu bytes\n", sizeof(data));
+
+3.Accessing Union Members:
+
+Union members can be accessed individually, but only one member at a time should be used to ensure correct data interpretation:
+data.intValue = 42;
+printf("Value stored in the union: %d\n", data.intValue);
+
+Example:
+#include <stdio.h>
+
+// Declaration of a Union
+union MyUnion {
+    int intValue;
+    float floatValue;
+    char charValue;
+};
+
+int main() {
+    // Creating an instance of the union
+    union MyUnion data;
+
+    // Accessing and assigning values to union members
+    data.intValue = 42;
+    printf("Value stored in the union: %d\n", data.intValue);
+
+    // Union size demonstration
+    printf("Size of the union: %lu bytes\n", sizeof(data));
+
+    return 0;
+}
+
+Additional Note:
+Unions in C provide a memory-efficient way to store different data types in the same location. They are particularly useful when only one type of data needs to be used at a given time, saving memory compared to structures.
+
+Copyright reserved by ECM2209270.

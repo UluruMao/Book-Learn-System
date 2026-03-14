@@ -1,0 +1,48 @@
+Copyright reserved by ECM2209270.
+Knowledge Unit: Pointer Arrays in C
+Title: Basic Understanding of Pointer Arrays
+
+Introduction:
+Pointer arrays in C provide a convenient way to store and manipulate a collection of pointers. This concept is handy for managing various data types or strings efficiently.
+
+Key Concepts:
+
+1.Declaration of Pointer Arrays:
+
+A pointer array is an array where each element is a pointer. It can be used to store addresses of variables or strings:
+int num1 = 10, num2 = 20, num3 = 30;
+int *numArray[3] = {&num1, &num2, &num3};
+
+2.Accessing Elements of Pointer Arrays:
+
+Elements of a pointer array can be accessed using array notation, and the stored addresses can be dereferenced to access the values:
+printf("Value at index 1: %d\n", *numArray[1]); // Accesses the value through the pointer
+
+3.String Array using Character Pointers:
+
+Pointer arrays are commonly used to store strings represented by character pointers:
+char *colors[] = {"Red", "Green", "Blue"};
+printf("Color at index 2: %s\n", colors[2]);
+
+Example:
+#include <stdio.h>
+
+int main() {
+    // Pointer array of integers
+    int num1 = 10, num2 = 20, num3 = 30;
+    int *numArray[3] = {&num1, &num2, &num3};
+
+    // Access and print values through pointer array
+    for (int i = 0; i < 3; i++) {
+        printf("Value at index %d: %d\n", i, *numArray[i]);
+    }
+
+    // String array using character pointers
+    char *colors[] = {"Red", "Green", "Blue"};
+    printf("Color at index 2: %s\n", colors[2]);
+
+    return 0;
+}
+Conclusion:
+Pointer arrays simplify the management of multiple pointers, making it easy to organize and access different data types or strings in C programming.
+Copyright reserved by ECM2209270.

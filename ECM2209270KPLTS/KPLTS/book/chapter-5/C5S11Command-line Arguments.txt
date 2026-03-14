@@ -1,0 +1,54 @@
+Copyright reserved by ECM2209270.
+
+Knowledge Unit: Basics of Command-line Arguments
+Title: Introduction to Command-line Arguments in C
+
+Introduction:
+Command-line arguments provide a way to pass information to a C program when it is executed from the command line. They offer flexibility for users to customize program behavior.
+
+Key Concepts:
+
+1.Main Function Signature:
+
+The main function in C can accept command-line arguments through its signature:
+int main(int argc, char *argv[]) {
+    // Code to process command-line arguments
+    return 0;
+}
+
+2.Number of Arguments (argc):
+
+The variable argc represents the number of command-line arguments passed to the program, including the program name itself:
+printf("Number of command-line arguments: %d\n", argc);
+
+3.Argument Values (argv):
+
+The array argv contains the actual values of the command-line arguments. The first element (argv[0]) is the program name:
+printf("Program name: %s\n", argv[0]);
+
+4.Accessing Additional Arguments:
+
+Additional command-line arguments can be accessed using array notation:
+if (argc > 1) {
+    printf("First additional argument: %s\n", argv[1]);
+}
+
+Example:
+#include <stdio.h>
+
+int main(int argc, char *argv[]) {
+    // Print the number of command-line arguments
+    printf("Number of command-line arguments: %d\n", argc);
+
+    // Print the program name
+    printf("Program name: %s\n", argv[0]);
+
+    // Access and print additional command-line arguments
+    if (argc > 1) {
+        printf("First additional argument: %s\n", argv[1]);
+    }
+
+    return 0;
+}
+
+Copyright reserved by ECM2209270.

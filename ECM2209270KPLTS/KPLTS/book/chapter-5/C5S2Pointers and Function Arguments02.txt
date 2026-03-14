@@ -1,0 +1,50 @@
+Copyright reserved by ECM2209270.
+Knowledge Unit 2: Pointers and Dynamic Memory Allocation
+Title: Dynamic Memory Allocation using Pointers in C
+
+Introduction:
+Dynamic memory allocation allows programs to request memory at runtime, providing flexibility in managing memory resources. Pointers play a crucial role in dynamic memory allocation in C.
+
+Key Concepts:
+
+1.Malloc and Free Functions:
+
+malloc is used to allocate memory dynamically, and free releases the allocated memory:
+int *dynamicArray = (int*)malloc(5 * sizeof(int)); // Allocates memory for an array of 5 integers
+free(dynamicArray); 				   // Releases the allocated memory
+
+2.Calloc Function:
+
+calloc allocates memory and initializes all bytes to zero. It is useful for arrays and structures:
+int *zeroInitializedArray = (int*)calloc(5, sizeof(int)); // Allocates memory for an array of 5 integers, 							     initializes to zero
+3.Realloc Function:
+
+realloc is used to resize dynamically allocated memory. It can be used to extend or reduce the size:
+
+dynamicArray = (int*)realloc(dynamicArray, 8 * sizeof(int)); // Resizes the array to accommodate 8 integers
+
+EXample:
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    // Dynamic memory allocation using malloc
+    int *dynamicArray = (int*)malloc(5 * sizeof(int));
+
+    // Check if memory allocation was successful
+    if (dynamicArray != NULL) {
+        // Use the dynamically allocated array
+        for (int i = 0; i < 5; i++) {
+            dynamicArray[i] = i * 10;
+            printf("Element %d: %d\n", i, dynamicArray[i]);
+        }
+
+        // Release dynamically allocated memory
+        free(dynamicArray);
+    } else {
+        printf("Memory allocation failed.\n");
+    }
+
+    return 0;
+}
+Copyright reserved by ECM2209270.

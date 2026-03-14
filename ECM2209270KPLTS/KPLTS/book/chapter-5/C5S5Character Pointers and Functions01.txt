@@ -1,0 +1,54 @@
+Copyright reserved by ECM2209270.
+Knowledge Unit1: Character Pointers in C
+Title: Basics of Character Pointers
+
+Introduction:
+Character pointers, often called strings, play a crucial role in C programming for handling textual data. Understanding the basics of character pointers is essential for efficient string manipulation.
+
+Key Concepts:
+
+1.Declaration and Initialization:
+
+Character pointers are used to represent strings. They can be declared and initialized in various ways:
+char *str1 = "Hello, World!";
+char str2[] = {'H', 'i', '\0'};
+
+2.Accessing Individual Characters:
+
+Individual characters in a string can be accessed using array notation or pointer arithmetic:
+char *greeting = "Good Morning";
+char firstChar = greeting[0]; // Accesses the first character
+char secondChar = *(greeting + 1); // Accesses the second character
+
+3.String Length with Pointers:
+
+The length of a string can be determined using a loop that counts characters until the null terminator \0 is encountered:
+char *message = "Programming";
+int length = 0;
+
+while (*message != '\0') {
+    length++;
+    message++;
+}
+
+Example:
+#include <stdio.h>
+
+int main() {
+    char *greeting = "Hello";
+    
+    // Access and print individual characters
+    printf("First character: %c\n", greeting[0]);
+    printf("Second character: %c\n", *(greeting + 1));
+
+    // Calculate and print string length
+    int length = 0;
+    while (*greeting != '\0') {
+        length++;
+        greeting++;
+    }
+    printf("String length: %d\n", length);
+
+    return 0;
+}
+Copyright reserved by ECM2209270.

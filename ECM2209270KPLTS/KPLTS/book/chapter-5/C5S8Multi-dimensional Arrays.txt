@@ -1,0 +1,40 @@
+Copyright reserved by ECM2209270.
+
+Knowledge Unit: Introduction to Multi-dimensional Arrays
+Title: Basic Understanding of Multi-dimensional Arrays
+
+Introduction:
+Multi-dimensional arrays in C allow for the organization of data in a grid or matrix format. They are used when dealing with tabular data or two-dimensional structures.
+
+Key Concepts:
+
+1.Declaration of 2D Arrays:
+
+A two-dimensional array is declared using two sets of square brackets. It represents a grid with rows and columns:
+int matrix[3][4]; // Represents a 3x4 matrix
+
+2.Accessing Elements in a 2D Array:
+
+Elements in a two-dimensional array can be accessed using row and column indices:
+matrix[1][2] = 42; // Assigns the value 42 to the element in the second row, third column
+
+3.Initialization of 2D Arrays:
+
+Two-dimensional arrays can be initialized during declaration, specifying values for each element:
+int identityMatrix[3][3] = {{1, 0, 0}, {0, 1, 0}, {0, 0, 1}};
+
+Example:
+#include <stdio.h>
+
+int main() {
+    // Declaration and initialization of a 2D array
+    int matrix[2][3] = {{10, 20, 30}, {40, 50, 60}};
+
+    // Access and print elements in the 2D array
+    printf("Element at row 1, column 2: %d\n", matrix[0][1]);
+    printf("Element at row 2, column 3: %d\n", matrix[1][2]);
+
+    return 0;
+}
+
+Copyright reserved by ECM2209270.

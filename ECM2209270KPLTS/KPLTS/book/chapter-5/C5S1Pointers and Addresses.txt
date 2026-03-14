@@ -1,0 +1,59 @@
+Copyright reserved by ECM2209270.
+Knowledge Unit: Pointers and Addresses
+Title: Understanding Pointers and Addresses
+
+Introduction:
+In C programming, pointers are variables that store memory addresses. They play a crucial role in manipulating data directly in memory, providing flexibility and efficiency in memory management.
+
+Key Concepts:
+
+1.Pointer Declaration and Initialization:
+
+A pointer is declared using the asterisk (*) symbol. For example:
+
+int *ptr; // Declares a pointer to an integer
+
+Initialization can be done by assigning the address of a variable:
+
+int x = 10;
+int *ptr = &x; // Initializes ptr with the address of x
+
+2.Accessing and Modifying Values Through Pointers:
+
+The value pointed to by a pointer can be accessed using the dereference operator (*):
+int y = *ptr; // Retrieves the value at the address stored in ptr
+
+Modifying the value at the address:
+*ptr = 20; // Changes the value at the address stored in ptr to 20
+
+3.Pointer Arithmetic:
+
+Pointers can be incremented and decremented, which is particularly useful when working with arrays:
+int arr[5] = {1, 2, 3, 4, 5};
+int *arrPtr = arr; // Points to the first element of the array
+
+// Move to the next element
+arrPtr++;
+
+4.Null Pointers:
+
+Pointers can be assigned a special value called NULL, indicating that they do not point to a valid memory location:
+int *nullPtr = NULL;
+
+Example:
+#include <stdio.h>
+
+int main() {
+    int x = 10;
+    int *ptr = &x;
+
+    // Access and modify values through pointers
+    printf("Value at the address pointed by ptr: %d\n", *ptr);
+    *ptr = 20;
+    printf("Modified value at the address: %d\n", x);
+
+    return 0;
+}
+
+Conclusion: Understanding pointers is fundamental in C programming and opens the door to advanced memory management and efficient data manipulation. Regular practice and experimentation with pointers will solidify your grasp of this concept.
+Copyright reserved by ECM2209270.

@@ -1,0 +1,66 @@
+Copyright reserved by ECM2209270.
+
+Knowledge Unit: Arrays of Structures in C
+Title: Using Arrays of Structures
+
+Introduction:
+Arrays of structures in C provide a way to manage and organize multiple instances of structured data. This is particularly useful when dealing with collections of related information.
+
+Key Concepts:
+
+1.Declaration of an Array of Structures:
+
+An array of structures is declared by combining the structure definition with the array declaration:
+struct Student {
+    int studentID;
+    char name[50];
+};
+
+struct Student studentArray[3]; // Array of structures
+
+2.Accessing Members in an Array of Structures:
+
+Members of each structure in the array are accessed using the array index and the dot (.) operator:
+studentArray[0].studentID = 101;
+
+3.Initialization of an Array of Structures:
+
+The array of structures can be initialized during declaration, specifying values for each structure:
+struct Student studentArray[] = {
+    {101, "Alice"},
+    {102, "Bob"},
+    {103, "Charlie"}
+};
+
+Example:
+#include <stdio.h>
+
+// Declaration of a Student structure
+struct Student {
+    int studentID;
+    char name[50];
+};
+
+int main() {
+    // Declaration of an array of structures
+    struct Student studentArray[3];
+
+    // Accessing and assigning values to members in the array
+    studentArray[0].studentID = 101;
+    studentArray[1].studentID = 102;
+    studentArray[2].studentID = 103;
+
+    // Initialization of an array of structures
+    struct Student initializedArray[] = {
+        {201, "David"},
+        {202, "Eva"},
+        {203, "Frank"}
+    };
+
+    return 0;
+}
+
+Conclusion:
+Arrays of structures provide a practical solution for organizing and managing related data in C. They are especially useful for handling datasets with a shared structure, offering efficiency in working with structured information.
+
+Copyright reserved by ECM2209270.

@@ -1,0 +1,71 @@
+Copyright reserved by ECM2209270.
+
+Knowledge Unit: Self-referential Structures in C
+Title: Basics of Self-referential Structures
+
+Introduction:
+Self-referential structures in C allow a structure to contain a pointer to another instance of the same structure type. This concept is commonly used to create linked data structures.
+
+Key Concepts:
+
+1.Declaration of a Self-referential Structure:
+
+A self-referential structure contains a pointer to its own type within its definition:
+struct Node {
+    int data;
+    struct Node *next; // Pointer to the next Node
+};
+
+2.Creating Linked Structures:
+
+Self-referential structures are often used to create linked lists where each structure points to the next one:
+struct Node *node1 = (struct Node *)malloc(sizeof(struct Node));
+struct Node *node2 = (struct Node *)malloc(sizeof(struct Node));
+
+node1->next = node2; // Linking node1 to node2
+
+3.Traversing Linked Structures:
+
+Linked structures can be traversed by following the pointers from one structure to the next:
+struct Node *current = node1;
+while (current != NULL) {
+    // Process current node
+    current = current->next;
+}
+
+Example:
+#include <stdio.h>
+#include <stdlib.h>
+
+// Declaration of a Self-referential Structure
+struct Node {
+    int data;
+    struct Node *next;
+};
+
+int main() {
+    // Creating linked structures
+    struct Node *node1 = (struct Node *)malloc(sizeof(struct Node));
+    struct Node *node2 = (struct Node *)malloc(sizeof(struct Node));
+
+    // Linking node1 to node2
+    node1->next = node2;
+
+    // Traversing linked structures
+    struct Node *current = node1;
+    while (current != NULL) {
+        // Process current node
+        current = current->next;
+    }
+
+    // Freeing dynamically allocated memory
+    free(node1);
+    free(node2);
+
+    return 0;
+}
+
+Additional Note:
+Self-referential structures are fundamental for creating dynamic data structures like linked lists. They allow structures to reference instances of the same type, enabling the construction of flexible and efficient data arrangements.
+
+Copyright reserved by ECM2209270.

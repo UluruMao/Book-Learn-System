@@ -1,0 +1,63 @@
+
+Copyright reserved by ECM2209270.
+
+Knowledge Unit: Pointers to Structures in C
+Title: Basics of Pointers to Structures
+
+Introduction:
+Pointers to structures in C provide a flexible way to work with structured data, allowing dynamic memory allocation and efficient manipulation of large datasets.
+
+Key Concepts:
+
+1.Declaration of a Pointer to a Structure:
+
+A pointer to a structure is declared similarly to other pointers, using the structure type followed by an asterisk (*):
+struct Point {
+    int x;
+    int y;
+};
+
+struct Point *ptrToPoint;
+
+2.Dynamic Memory Allocation for Structures:
+
+Pointers to structures are often used with dynamic memory allocation to create structures at runtime:
+struct Point *dynamicPoint = (struct Point *)malloc(sizeof(struct Point));
+
+3.Accessing Members through Pointers:
+
+Members of a structure can be accessed through pointers using the arrow (->) operator:
+dynamicPoint->x = 5;
+dynamicPoint->y = 3;
+
+Example:
+#include <stdio.h>
+#include <stdlib.h>
+
+// Declaration of a Point structure
+struct Point {
+    int x;
+    int y;
+};
+
+int main() {
+    // Declaration of a pointer to a structure
+    struct Point *ptrToPoint;
+
+    // Dynamic memory allocation for a structure
+    struct Point *dynamicPoint = (struct Point *)malloc(sizeof(struct Point));
+
+    // Accessing and assigning values to structure members through pointers
+    dynamicPoint->x = 5;
+    dynamicPoint->y = 3;
+
+    // Freeing dynamically allocated memory
+    free(dynamicPoint);
+
+    return 0;
+}
+
+Conclusion:
+Pointers to structures in C offer flexibility for dynamic memory allocation and efficient manipulation of structured data. They are commonly used for handling large datasets and enabling runtime creation of structures.
+
+Copyright reserved by ECM2209270.

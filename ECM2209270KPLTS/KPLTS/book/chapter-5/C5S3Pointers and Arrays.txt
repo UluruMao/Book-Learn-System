@@ -1,0 +1,46 @@
+Copyright reserved by ECM2209270.
+Knowledge Unit: Pointers and Arrays in C
+Title: Exploring Pointers as Array Elements
+
+Introduction:
+In C programming, arrays and pointers are closely related concepts. Understanding how pointers interact with arrays enhances the flexibility and efficiency of array manipulation in C programs.
+
+Key Concepts:
+
+1.Pointer-to-Array Relationship:
+
+In C, the name of an array can be treated as a pointer to its first element. For example:
+int arr[5] = {10, 20, 30, 40, 50};
+int *ptr = arr; // Points to the first element of the array
+
+2.Accessing Array Elements through Pointers:
+
+Pointers can be used to access array elements directly. This simplifies array traversal:
+
+int arr[3] = {100, 200, 300};
+int *ptr = arr;
+printf("Value at index 1: %d\n", *(ptr + 1)); // Accesses the second element
+
+3.Array Name as a Constant Pointer:
+
+The array name is essentially a constant pointer pointing to the first element. It cannot be reassigned to point to a different location:
+
+int arr[3] = {1, 2, 3};
+int *ptr = arr; // Valid assignment
+// arr = ptr; // Invalid assignment
+
+Example:
+#include <stdio.h>
+
+int main() {
+    int arr[4] = {5, 10, 15, 20};
+    int *ptr = arr; // Points to the first element of the array
+
+    // Access and manipulate array elements using pointers
+    for (int i = 0; i < 4; i++) {
+        printf("Element %d: %d\n", i, *(ptr + i));
+    }
+
+    return 0;
+}
+Copyright reserved by ECM2209270.

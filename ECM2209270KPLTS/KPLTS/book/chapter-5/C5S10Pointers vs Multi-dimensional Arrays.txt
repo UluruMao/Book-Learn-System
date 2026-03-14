@@ -1,0 +1,52 @@
+Copyright reserved by ECM2209270.
+
+Knowledge Unit: Pointers vs Multi-dimensional Arrays
+Title: Basic Comparison of Pointers and Multi-dimensional Arrays
+
+Introduction:
+Pointers and multi-dimensional arrays in C share similarities, but they also have distinct characteristics. Understanding their differences is essential for effective memory management.
+
+Key Concepts:
+
+1.Declaration and Initialization:
+
+Pointers are variables that store memory addresses, while multi-dimensional arrays represent contiguous blocks of memory. Pointers can be dynamically allocated, offering flexibility:
+int *dynamicArray = (int *)malloc(5 * sizeof(int)); // Pointer to dynamic array
+int matrix[3][4]; // 3x4 multi-dimensional array
+
+2.Memory Allocation:
+
+Multi-dimensional arrays are statically allocated, meaning their size is fixed at compile-time. Pointers, especially those dynamically allocated, provide more flexibility in adjusting the size at runtime:
+int matrix[3][4]; // Statically allocated 3x4 array
+int *dynamicArray = (int *)malloc(5 * sizeof(int)); // Dynamically allocated array
+
+3.Accessing Elements:
+
+Accessing elements in a multi-dimensional array involves using indices. Pointers provide more flexibility, allowing for pointer arithmetic and indirect access:
+int value = matrix[1][2]; // Accessing element in a multi-dimensional array
+int *ptr = dynamicArray + 2; // Accessing element through pointer arithmetic
+
+Example:
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    // Dynamically allocated pointer array
+    int *dynamicArray = (int *)malloc(5 * sizeof(int));
+    dynamicArray[2] = 42;
+
+    // Statically allocated multi-dimensional array
+    int matrix[3][4];
+    matrix[1][2] = 30;
+
+    // Access and print values
+    printf("Value in dynamic array: %d\n", dynamicArray[2]);
+    printf("Value in multi-dimensional array: %d\n", matrix[1][2]);
+
+    // Free dynamically allocated memory
+    free(dynamicArray);
+
+    return 0;
+}
+
+Copyright reserved by ECM2209270.

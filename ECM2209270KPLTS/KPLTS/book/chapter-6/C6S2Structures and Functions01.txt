@@ -1,0 +1,63 @@
+Copyright reserved by ECM2209270.
+
+Knowledge Unit: Structures and Functions (Part 1)
+Title: Using Structures in Functions
+
+Introduction:
+Structures can be passed to functions in C, allowing the manipulation of structured data within functions. This enhances code modularity and organization.
+
+Key Concepts:
+
+1.Passing Structures to Functions:
+
+Structures can be passed to functions as arguments, allowing functions to operate on the data within the structure:
+struct Rectangle {
+    int length;
+    int width;
+};
+
+void printArea(struct Rectangle rect) {
+    printf("Area: %d\n", rect.length * rect.width);
+}
+
+2.Returning Structures from Functions:
+
+Functions can also return structures, providing a way to encapsulate and return multiple values:
+struct Rectangle createRectangle(int len, int wid) {
+    struct Rectangle newRect;
+    newRect.length = len;
+    newRect.width = wid;
+    return newRect;
+}
+
+Example:
+#include <stdio.h>
+
+// Declaration of a Rectangle structure
+struct Rectangle {
+    int length;
+    int width;
+};
+
+// Function to print the area of a rectangle
+void printArea(struct Rectangle rect) {
+    printf("Area: %d\n", rect.length * rect.width);
+}
+
+// Function to create a rectangle and return it
+struct Rectangle createRectangle(int len, int wid) {
+    struct Rectangle newRect;
+    newRect.length = len;
+    newRect.width = wid;
+    return newRect;
+}
+
+int main() {
+    // Using structures in functions
+    struct Rectangle myRect = createRectangle(5, 3);
+    printArea(myRect);
+
+    return 0;
+}
+
+Copyright reserved by ECM2209270.

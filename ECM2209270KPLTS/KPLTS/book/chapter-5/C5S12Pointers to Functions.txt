@@ -1,0 +1,53 @@
+Copyright reserved by ECM2209270.
+
+Knowledge Unit: Pointers to Functions in C
+Title: Basics of Pointers to Functions
+
+Introduction:
+Pointers to functions in C provide a way to create flexible and dynamic code by allowing functions to be treated as variables. They are useful for implementing callbacks and creating more modular programs.
+
+Key Concepts:
+
+1.Declaration of Function Pointer:
+
+A pointer to a function is declared by specifying the function's return type and parameter types:
+int add(int a, int b) {
+    return a + b;
+}
+
+int (*ptrToFunction)(int, int);
+
+2.Assignment of Function Pointer:
+
+Function pointers can be assigned the address of a compatible function. The function signature must match the pointer's declaration:
+ptrToFunction = add; // Assigning the address of the 'add' function
+
+3.Calling Functions Through Pointers:
+
+Functions can be called through their pointers using the dereference operator (*):
+
+Example:
+#include <stdio.h>
+
+// Function to add two numbers
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    // Declaration of a function pointer
+    int (*ptrToFunction)(int, int);
+
+    // Assigning the address of the 'add' function to the pointer
+    ptrToFunction = add;
+
+    // Calling the function through the pointer
+    int result = (*ptrToFunction)(2, 3);
+
+    // Print the result
+    printf("Result of adding: %d\n", result);
+
+    return 0;
+}
+
+Copyright reserved by ECM2209270.

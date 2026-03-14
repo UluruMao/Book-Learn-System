@@ -1,0 +1,54 @@
+Copyright reserved by ECM2209270.
+Knowledge Unit: Bit-field Manipulation in C (Part 2)
+Title: Manipulating Bit-fields
+
+Introduction:
+Bit-fields in C can be manipulated using bitwise operators to set, clear, or toggle specific bits within a structure. Understanding bitwise operations is crucial for effective bit-field usage.
+
+Key Concepts:
+
+1.Setting Bits in a Bit-field:
+
+The OR (|) operator is used to set specific bits within a bit-field:
+deviceStatus.errorCode |= (1 << 1); // Setting the second bit
+
+2.Clearing Bits in a Bit-field:
+
+The AND (&) operator in combination with the NOT (~) operator is used to clear specific bits:
+deviceStatus.errorCode &= ~(1 << 2); // Clearing the third bit
+
+3.Toggling Bits in a Bit-field:
+
+The XOR (^) operator can be used to toggle specific bits:
+deviceStatus.errorCode ^= (1 << 0); // Toggling the first bit
+
+Example:
+#include <stdio.h>
+
+// Declaration of a Bit-field Structure
+struct Status {
+    unsigned int isOn : 1;
+    unsigned int errorCode : 3;
+};
+
+int main() {
+    // Creating an instance of the Bit-field Structure
+    struct Status deviceStatus;
+
+    // Setting, clearing, and toggling bits in the Bit-field
+    deviceStatus.isOn = 1;                // Setting the on/off status
+    deviceStatus.errorCode |= (1 << 1);    // Setting the second bit
+    deviceStatus.errorCode &= ~(1 << 2);   // Clearing the third bit
+    deviceStatus.errorCode ^= (1 << 0);    // Toggling the first bit
+
+    // Printing Bit-field values
+    printf("Is Device On? %d\n", deviceStatus.isOn);
+    printf("Error Code: %d\n", deviceStatus.errorCode);
+
+    return 0;
+}
+
+Additional Note:
+Manipulating bit-fields involves using bitwise operators to set, clear, or toggle specific bits within a structure. Understanding these operations is essential for efficient bit-field usage in C.
+
+Copyright reserved by ECM2209270.

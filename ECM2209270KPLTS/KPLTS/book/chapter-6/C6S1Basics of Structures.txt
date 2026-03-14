@@ -1,0 +1,56 @@
+Copyright reserved by ECM2209270.
+
+Knowledge Unit: Basics of Structures in C
+Title: Introduction to Structures
+
+Introduction:
+Structures in C provide a way to group related data under a single name. They are useful for organizing and representing complex data in a more manageable form.
+
+Key Concepts:
+
+1.Declaration of a Structure:
+
+A structure is declared using the struct keyword followed by a name, defining a blueprint for a new data type:
+struct Point {
+    int x;
+    int y;
+};
+
+2.Defining Structure Variables:
+
+Structure variables are created by specifying the structure's name followed by the variable name:
+struct Point myPoint;
+
+3.Accessing Structure Members:
+
+Members of a structure can be accessed using the dot (.) operator:
+myPoint.x = 10;
+myPoint.y = 5;
+
+Example:
+#include <stdio.h>
+
+// Declaration of a Point structure
+struct Point {
+    int x;
+    int y;
+};
+
+int main() {
+    // Creating a Point structure variable
+    struct Point myPoint;
+
+    // Accessing and assigning values to structure members
+    myPoint.x = 10;
+    myPoint.y = 5;
+
+    // Printing the values of structure members
+    printf("Coordinates: (%d, %d)\n", myPoint.x, myPoint.y);
+
+    return 0;
+}
+
+Additional Note:
+Structures play a crucial role in C programming by allowing the creation of user-defined data types. They provide a foundation for more complex data structures and are commonly used in various applications.
+
+Copyright reserved by ECM2209270.

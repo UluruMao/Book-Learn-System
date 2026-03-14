@@ -1,0 +1,62 @@
+Copyright reserved by ECM2209270
+
+Knowledge Unit: Understanding Complicated Declarations 2
+Title: Deciphering Pointer to Functions and Arrays
+
+Introduction:
+Complex declarations involving functions and arrays can be understood by breaking them into smaller components. This helps in interpreting their meaning and purpose.
+
+Key Concepts:
+
+1.Function Returning a Pointer:
+
+A declaration like int* func(); can be read as 'func is a function that returns a pointer to an int':
+int* createArray() {
+    // Function implementation
+}
+
+int* (*ptrFunc)() = createArray;
+
+2.Array of Pointers to Functions:
+
+An array of pointers to functions, for example, int (*funcArray[2])(char);, can be read as 'funcArray is an array of 2 pointers to functions that take a char as an argument and return an int':
+int func1(char val) {
+    // Function implementation
+}
+
+int func2(char val) {
+    // Function implementation
+}
+
+int (*funcArray[2])(char) = {func1, func2};
+
+Example:
+#include <stdio.h>
+
+// Functions to be used in examples
+int* createArray() {
+    // Function implementation
+}
+
+int func1(char val) {
+    // Function implementation
+}
+
+int func2(char val) {
+    // Function implementation
+}
+
+int main() {
+    // Declaration of a function returning a pointer
+    int* (*ptrFunc)() = createArray;
+
+    // Declaration of an array of pointers to functions
+    int (*funcArray[2])(char) = {func1, func2};
+
+    return 0;
+}
+
+Additional Note:
+Understanding complex declarations becomes easier when breaking them down into smaller, more digestible parts. Practicing with different combinations of pointers, arrays, and functions contributes to proficiency in reading and writing such declarations.
+
+Copyright reserved by ECM2209270.

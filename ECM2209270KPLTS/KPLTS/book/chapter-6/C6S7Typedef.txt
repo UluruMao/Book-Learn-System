@@ -1,0 +1,59 @@
+Copyright reserved by ECM2209270.
+
+Knowledge Unit: Typedef in C
+Title: Introduction to Typedef
+
+Introduction:
+typedef in C is a keyword used to create an alias for an existing data type. It improves code readability and allows programmers to define custom names for data types, making the code more self-explanatory.
+
+Key Concepts:
+
+1.Typedef Syntax:
+
+The basic syntax of typedef is as follows:
+typedef existing_type new_type;
+
+For example:
+typedef int myInt; // 'myInt' is now an alias for 'int'
+
+2.Creating Custom Data Types:
+
+typedef is commonly used to create custom names for complex data types, making code more readable:
+typedef struct {
+    int x;
+    int y;
+} Point;
+
+3.Simplifying Pointer Declarations:
+
+typedef simplifies the declaration of pointers, especially for complex data types:
+typedef int* IntPtr; // 'IntPtr' is now an alias for 'int*'
+
+Example:
+#include <stdio.h>
+
+// Typedef for an integer
+typedef int myInt;
+
+// Typedef for a structure
+typedef struct {
+    int x;
+    int y;
+} Point;
+
+// Typedef for a pointer to int
+typedef int* IntPtr;
+
+int main() {
+    // Using typedef aliases
+    myInt num = 42;
+    Point p = {10, 5};
+    IntPtr pNum = &num;
+
+    return 0;
+}
+
+Additional Note:
+typedef is a useful feature in C for creating custom names for data types, improving code clarity and reducing redundancy. It is often used with complex structures, custom types, and pointer declarations.
+
+Copyright reserved by ECM2209270.

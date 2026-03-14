@@ -1,0 +1,72 @@
+Copyright reserved by ECM2209270.
+Knowledge Unit2: Character Pointers and Functions
+Title: Using Character Pointers in Functions
+
+Introduction:
+Character pointers are commonly used as function parameters for string manipulation. Passing and modifying strings through functions is a fundamental skill in C programming.
+
+Key Concepts:
+
+1.Passing Character Pointers to Functions:
+
+Functions can receive character pointers as parameters, allowing them to work with strings directly:
+void printString(char *str) {
+    printf("%s\n", str);
+}
+
+2.Modifying Strings in Functions:
+
+Functions can modify strings through character pointers. Ensure sufficient memory is allocated for modifications:
+void addSuffix(char *str, char *suffix) {
+    while (*str != '\0') {
+        str++;
+    }
+
+    while (*suffix != '\0') {
+        *str = *suffix;
+        str++;
+        suffix++;
+    }
+
+    *str = '\0'; // Ensure the modified string is null-terminated
+}
+
+Example:
+#include <stdio.h>
+
+// Function to print a string
+void printString(char *str) {
+    printf("%s\n", str);
+}
+
+// Function to add a suffix to a string
+void addSuffix(char *str, char *suffix) {
+    while (*str != '\0') {
+        str++;
+    }
+
+    while (*suffix != '\0') {
+        *str = *suffix;
+        str++;
+        suffix++;
+    }
+
+    *str = '\0'; // Ensure the modified string is null-terminated
+}
+
+int main() {
+    char message[50] = "Hello";
+
+    // Call function to print the string
+    printString(message);
+
+    // Call function to add a suffix
+    addSuffix(message, ", World!");
+    printString(message);
+
+    return 0;
+}
+
+Additional Note:
+Using character pointers in functions enables efficient string manipulation and is a common practice in C programming. Care should be taken to manage memory appropriately when modifying strings.
+Copyright reserved by ECM2209270.

@@ -1,0 +1,51 @@
+Copyright reserved by ECM2209270.
+
+Knowledge Unit: Introduction to Bit-fields in C (Part 1)
+Title: Basics of Bit-fields
+
+Introduction:
+Bit-fields in C allow the creation of data structures where members use a specified number of bits. This enables the efficient use of memory by packing multiple variables into a single storage unit.
+
+Key Concepts:
+
+1.Declaration of Bit-fields:
+
+Bit-fields are declared within a structure using a colon (:) followed by the number of bits each member should occupy:
+struct Status {
+    unsigned int isOn : 1;   // 1 bit for on/off status
+    unsigned int errorCode : 3;  // 3 bits for error code
+};
+
+2.Bit-field Usage:
+
+Once declared, bit-fields can be used like regular members within a structure. They offer a compact representation of data:
+struct Status deviceStatus;
+deviceStatus.isOn = 1;      // Setting on/off status
+deviceStatus.errorCode = 2; // Setting error code
+
+Example:
+#include <stdio.h>
+
+// Declaration of a Bit-field Structure
+struct Status {
+    unsigned int isOn : 1;
+    unsigned int errorCode : 3;
+};
+
+int main() {
+    // Creating an instance of the Bit-field Structure
+    struct Status deviceStatus;
+
+    // Setting values for Bit-fields
+    deviceStatus.isOn = 1;
+    deviceStatus.errorCode = 2;
+
+    // Printing Bit-field values
+    printf("Is Device On? %d\n", deviceStatus.isOn);
+    printf("Error Code: %d\n", deviceStatus.errorCode);
+
+    return 0;
+}
+
+
+Copyright reserved by ECM2209270.

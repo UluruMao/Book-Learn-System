@@ -1,0 +1,38 @@
+Copyright reserved by ECM2209270.
+
+Knowledge Unit : Understanding Complicated Declarations 1
+Title: Simplifying Complex Declarations in C
+
+Introduction:
+Complicated declarations in C, especially involving pointers and arrays, can be simplified by breaking them down into smaller parts. Understanding the basics makes it easier to decipher complex declarations.
+
+Key Concepts:
+
+1.Declaration Reading Order:
+
+When reading complex declarations, start from the variable name and move outward. Focus on one part at a time to reduce confusion:
+int *ptrArray[5];
+// Read as: 'ptrArray is an array of 5 pointers to int'
+
+2.Pointer to an Array:
+
+A declaration like int (*ptr)[3]; can be read as 'ptr is a pointer to an array of 3 integers':
+int array[3];
+int (*ptr)[3] = &array;
+
+Example:
+#include <stdio.h>
+
+int main() {
+    // Declaration of an array of pointers
+    int *ptrArray[5];
+
+    // Declaration of a pointer to an array
+    int array[3];
+    int (*ptr)[3] = &array;
+
+    return 0;
+}
+
+Copyright reserved by ECM2209270.
+

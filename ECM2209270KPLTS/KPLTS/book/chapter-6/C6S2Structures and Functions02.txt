@@ -1,0 +1,62 @@
+Knowledge Unit: Structures and Functions (Part 2)
+
+Title: Pointers to Structures in Functions
+
+Introduction:
+Pointers to structures provide an efficient way to work with large data structures in functions. They allow functions to modify structure members directly.
+
+Key Concepts:
+
+1. Passing Pointers to Structures:
+   Instead of passing the entire structure, a pointer to the structure can be passed to a function for more efficient memory usage:
+     void doubleDimensions(struct Rectangle *rect) {
+         rect->length *= 2;
+         rect->width *= 2;
+     }
+
+2. Returning Pointers from Functions:
+   Functions can also return pointers to structures, offering a way to dynamically allocate memory for structures:
+     struct Rectangle* createRectangle(int len, int wid) {
+         struct Rectangle *newRect = (struct Rectangle *)malloc(sizeof(struct Rectangle));
+         newRect->length = len;
+         newRect->width = wid;
+         return newRect;
+     }
+  
+
+Example:
+#include <stdio.h>
+#include <stdlib.h>
+
+// Declaration of a Rectangle structure
+struct Rectangle {
+    int length;
+    int width;
+};
+
+// Function to double the dimensions of a rectangle using pointers
+void doubleDimensions(struct Rectangle *rect) {
+    rect->length *= 2;
+    rect->width *= 2;
+}
+
+// Function to create a rectangle and return a pointer to it
+struct Rectangle* createRectangle(int len, int wid) {
+    struct Rectangle *newRect = (struct Rectangle *)malloc(sizeof(struct Rectangle));
+    newRect->length = len;
+    newRect->width = wid;
+    return newRect;
+}
+
+int main() {
+    // Using pointers to structures in functions
+    struct Rectangle myRect = {5, 3};
+    doubleDimensions(&myRect);
+
+    // Creating a rectangle using a function that returns a pointer
+    struct Rectangle *newRect = createRectangle(8, 6);
+
+    return 0;
+}
+
+Copyright reserved by ECM2209270.

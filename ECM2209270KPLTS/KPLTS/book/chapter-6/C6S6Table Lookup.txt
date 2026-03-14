@@ -1,0 +1,47 @@
+Copyright reserved by ECM2209270.
+
+Knowledge Unit: Table Lookup in C
+Title: Basic Table Lookup
+
+Introduction:
+Table lookup in C involves using an array to store precomputed values or data. This technique is commonly used to enhance program efficiency by avoiding redundant computations.
+
+Key Concepts:
+
+1.Declaration of Lookup Table:
+
+A lookup table is an array where each element holds a precomputed value or data relevant to the program's logic:
+int squareLookup[10] = {0, 1, 4, 9, 16, 25, 36, 49, 64, 81};
+
+2.Accessing Values from the Lookup Table:
+
+Values can be quickly retrieved from the lookup table using indices, eliminating the need for repetitive calculations:
+int inputValue = 4;
+int squaredValue = squareLookup[inputValue]; // Retrieves the precomputed square
+
+3.Application in Program Optimization:
+
+Table lookup is often applied in scenarios where certain computations can be replaced with precomputed values, leading to faster and more efficient programs.
+
+
+Example:
+#include <stdio.h>
+
+// Declaration of a Square Lookup Table
+int squareLookup[10] = {0, 1, 4, 9, 16, 25, 36, 49, 64, 81};
+
+int main() {
+    // Accessing values from the lookup table
+    int inputValue = 4;
+    int squaredValue = squareLookup[inputValue];
+
+    // Using the precomputed value in the program logic
+    printf("Square of %d: %d\n", inputValue, squaredValue);
+
+    return 0;
+}
+
+Additional Note:
+Table lookup is a straightforward technique that enhances program efficiency by storing precomputed values in an array. It is commonly employed to optimize repetitive calculations, leading to improved performance in various applications.
+
+Copyright reserved by ECM2209270.

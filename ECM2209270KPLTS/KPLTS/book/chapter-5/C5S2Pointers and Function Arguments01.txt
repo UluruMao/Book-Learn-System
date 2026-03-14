@@ -1,0 +1,46 @@
+Copyright reserved by ECM2209270.
+Knowledge Unit 1: Pointer Arithmetic in C
+Title: Exploring Pointer Arithmetic and Array Access
+
+Introduction:
+Pointer arithmetic in C allows for efficient navigation through arrays and dynamic memory allocation. Understanding how pointers can be manipulated helps enhance data manipulation capabilities in C programs.
+
+Key Concepts:
+
+1.Pointer Increment and Decrement:
+
+Pointers can be incremented and decremented, influencing the memory address they point to. For example:
+int arr[5] = {10, 20, 30, 40, 50};
+int *ptr = arr; // Points to the first element
+ptr++; // Moves to the next element
+
+2.Array Access with Pointers:
+
+Pointers can be used to access array elements. This is particularly useful when iterating through arrays:
+int arr[3] = {100, 200, 300};
+int *ptr = arr;
+printf("Value at index 1: %d\n", *(ptr + 1)); // Accesses the second element
+
+3.Pointer Subtraction:
+
+Subtracting pointers gives the number of elements between them, aiding in calculating distances in arrays:
+int arr[4] = {1, 2, 3, 4};
+int *start = &arr[0];
+int *end = &arr[3];
+printf("Number of elements: %ld\n", end - start); // Outputs 3
+
+Example:
+#include <stdio.h>
+
+int main() {
+    int arr[5] = {10, 20, 30, 40, 50};
+    int *ptr = arr; // Points to the first element
+
+    // Access and manipulate array elements using pointer arithmetic
+    for (int i = 0; i < 5; i++) {
+        printf("Element %d: %d\n", i, *(ptr + i));
+    }
+
+    return 0;
+}
+Copyright reserved by ECM2209270.

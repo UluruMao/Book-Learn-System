@@ -1,0 +1,51 @@
+Copyright reserved by ECM2209270.
+Knowledge Unit: Address Arithmetic in C
+Title: Basic Address Arithmetic with Pointers
+
+Introduction:
+Address arithmetic involves manipulating memory addresses using pointers. It's a fundamental concept in C programming that allows for efficient navigation through memory locations.
+
+Key Concepts:
+
+1.Pointer Address Manipulation:
+
+Pointers can be incremented and decremented to navigate through adjacent memory locations:
+int x = 10;
+int *ptr = &x;
+
+ptr++; // Moves to the next memory location
+
+2.Integer Multiplication with Pointers:
+
+Multiplying a pointer by an integer value scales the pointer's address by the size of the pointed-to data type:
+int arr[5] = {1, 2, 3, 4, 5};
+int *ptr = arr;
+
+ptr = ptr + 2; // Moves two elements ahead in the array
+
+3.Using Negative Integers with Pointers:
+
+Subtracting a positive integer or adding a negative integer achieves the same result. Both operations move the pointer backward in memory:
+int arr[3] = {10, 20, 30};
+int *ptr = &arr[2];
+
+ptr = ptr - 1; // Moves one element back in the array
+
+Example:
+#include <stdio.h>
+
+int main() {
+    int arr[5] = {5, 10, 15, 20, 25};
+    int *ptr = arr; // Points to the first element of the array
+
+    // Address arithmetic to access and print array elements
+    for (int i = 0; i < 5; i++) {
+        printf("Element %d: %d\n", i, *(ptr + i));
+    }
+
+    return 0;
+}
+
+Additional Note:
+Address arithmetic is a simple yet powerful concept that allows for efficient traversal of arrays and manipulation of memory locations in C. It forms the basis for various advanced programming techniques.
+Copyright reserved by ECM2209270.
