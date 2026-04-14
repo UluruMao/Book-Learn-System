@@ -27,10 +27,44 @@ You must have these specific folders in the same directory as your program befor
 
 ## How to Run
 
-double click the e_book_system.exe
+### Prerequisites
+Ensure you have a C compiler installed on your system (e.g., `gcc` for Linux/macOS or MinGW for Windows) and `git`.
+
+### 1) Clone the Repository
+Open your terminal and run:
+```bash
+git clone [https://github.com/UluruMao/Book-Learn-System.git](https://github.com/UluruMao/Book-Learn-System.git)
+cd Book-Learn-System
+```
+### 2) Compile the Code
+If the repository includes a Makefile, you can compile the project by simply running:
+
+Bash
+```
+make
+```
+If there is no Makefile, compile the source files manually using gcc (adjust main.c if your primary file is named differently or if there are multiple .c files):
+
+Bash
+```
+gcc main.c -o book_learn_system
+```
+### 3) Run the Application
+Once compiled, start the study system:
+
+Linux / macOS:
+
+Bash
+```
+./book_learn_system
+```
+Windows (Command Prompt / PowerShell):
+
+PowerShell
+```
+.\book_learn_system.exe
+```
+Note: Since the application uses local binary and text file I/O to track study sessions, ensure the program has permission to read/write files in the directory where it is executed.
 
 ## Video Presentation
 https://youtu.be/8w7lUCVCzMY
-
-## Copyright
-Copyright reserved by UluruMao.
